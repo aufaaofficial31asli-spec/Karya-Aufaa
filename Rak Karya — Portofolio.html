@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rak Karya — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf8f3;--card:#fff;--ink:#241f1a;--mute:#7b7167;--line:#e8e0d5;--acc:#c2410c;--acc2:#be185d;--soft:#f3ebdf;--ink-inv:#fbf8f3;
+--serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120f;--card:#221d19;--ink:#f3ece3;--mute:#a69b8d;--line:#352e27;--acc:#fb923c;--acc2:#f472b6;--soft:#2c251f;--ink-inv:#15120f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15120f;--card:#221d19;--ink:#f3ece3;--mute:#a69b8d;--line:#352e27;--acc:#fb923c;--acc2:#f472b6;--soft:#2c251f;--ink-inv:#15120f;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+button,.btn{font:inherit;font-weight:500;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 16px;border-radius:999px;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s}
+button:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.1)}
+.pri{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border:0;font-weight:600}
+.danger{color:#c0392b}
+/* nav */
+nav{position:sticky;top:0;z-index:15;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font:800 1.25rem var(--serif);text-decoration:none}
+.brand i{color:var(--acc);font-style:normal}
+.links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.links a{text-decoration:none;padding:6px 12px;border-radius:999px;font-size:.92rem;color:var(--mute)}
+.links a:hover{background:var(--soft);color:var(--ink)}
+/* hero */
+.hero{position:relative;padding:72px 0 56px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:radial-gradient(var(--line) 1.2px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;z-index:-1;animation:float 14s ease-in-out infinite}
+.b1{width:320px;height:320px;background:var(--acc);top:-80px;right:-60px}
+.b2{width:260px;height:260px;background:var(--acc2);bottom:-90px;left:-70px;animation-delay:-5s}
+.b3{width:180px;height:180px;background:#6366f1;top:40%;left:45%;opacity:.22;animation-delay:-9s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-30px) scale(1.08)}}
+.deco{position:absolute;font:800 2rem var(--serif);color:var(--acc);opacity:.5;z-index:-1;animation:bob 6s ease-in-out infinite;user-select:none}
+.d1{top:36px;left:7%}.d2{top:90px;right:12%;color:var(--acc2);animation-delay:-2s}.d3{bottom:30px;right:30%;animation-delay:-4s;font-size:1.6rem}.d4{bottom:60px;left:16%;color:var(--acc2);animation-delay:-1s;font-size:1.5rem}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+.hello{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:5px 14px;border-radius:999px;font-size:.85rem;color:var(--mute)}
+.hello b{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+h1{font:800 clamp(2.4rem,7vw,4.6rem)/1.05 var(--serif);margin:18px 0 12px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(120deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;font-weight:600}
+.tag-line{font-size:1.15rem;color:var(--mute);max-width:560px;margin:0 0 24px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 18px;min-width:96px}
+.stat b{display:block;font:800 1.7rem/1 var(--serif);color:var(--c,var(--acc))}
+.stat small{color:var(--mute);font-size:.8rem}
+/* marquee */
+.marq{border-block:1px solid var(--line);background:var(--soft);overflow:hidden;white-space:nowrap;padding:12px 0}
+.marq div{display:inline-block;animation:slide 28s linear infinite;font:italic 600 1.2rem var(--serif);color:var(--mute)}
+.marq span{margin:0 22px}.marq em{color:var(--acc);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:64px 0 20px}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:600}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--serif);margin:6px 0 20px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;align-items:center}
+.chip{padding:6px 15px;font-size:.88rem}
+.chip.on{background:var(--ink);color:var(--ink-inv);border-color:var(--ink)}
+input,select,textarea{font:inherit;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+textarea{min-height:200px;resize:vertical}
+#q{flex:1;min-width:170px;width:auto;border-radius:999px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{--c:var(--acc);position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px;cursor:pointer;overflow:hidden;transition:transform .25s,box-shadow .25s;animation:up .5s both}
+.card::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--c)}
+.card::after{content:attr(data-ic);position:absolute;right:-6px;bottom:-22px;font:800 5.5rem var(--serif);color:var(--c);opacity:.1;transition:transform .3s}
+.card:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:0 16px 36px rgba(0,0,0,.14)}
+.card:hover::after{transform:scale(1.15) rotate(-8deg)}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}
+.tag{align-self:flex-start;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c);font-size:.74rem;font-weight:600;padding:3px 11px;border-radius:999px}
+.card h3{margin:0;font:600 1.25rem/1.25 var(--serif)}
+.card p{margin:0;color:var(--mute);font-size:.92rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.meta{margin-top:auto;padding-top:6px;font-size:.78rem;color:var(--mute)}
+.empty{text-align:center;color:var(--mute);padding:54px 12px;border:2px dashed var(--line);border-radius:20px}
+/* about */
+.about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:28px}
+.avatar{width:120px;height:120px;border-radius:32px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font:800 3.2rem var(--serif);color:#fff;transform:rotate(-5deg);box-shadow:10px 10px 0 var(--soft)}
+.about p{margin:0 0 10px;white-space:pre-wrap}
+@media(max-width:600px){.about{grid-template-columns:1fr;text-align:center;justify-items:center}}
+footer{margin-top:70px;border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--mute);font-size:.9rem}
+footer .hearts{color:var(--acc2)}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:24px 12px;z-index:30}
+.modal.open{display:flex}
+.sheet{background:var(--bg);border-radius:22px;max-width:760px;width:100%;padding:24px;border:1px solid var(--line);animation:up .3s both}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.field{margin-bottom:12px}
+label{display:block;font-size:.85rem;color:var(--mute);margin-bottom:4px}
+.read{font:1.05rem/1.85 var(--serif);white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;max-height:58vh;overflow:auto}
+.codebox{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.codebar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--soft);font-size:.8rem;color:var(--mute);gap:8px}
+.codebar button{padding:3px 12px;font-size:.8rem}
+.codewrap{display:flex;max-height:60vh;overflow:auto;font:.85rem/1.55 ui-monospace,Menlo,Consolas,monospace}
+.gut{position:sticky;left:0;margin:0;padding:12px 10px;text-align:right;color:var(--mute);background:var(--soft);user-select:none;border-right:1px solid var(--line);font:inherit}
+.codewrap pre.src{margin:0;padding:12px 14px;flex:1 0 auto;font:inherit;white-space:pre;tab-size:2}
+.codewrap code{font:inherit;background:none;padding:0}
+.hljs-comment,.hljs-quote{color:var(--mute);font-style:italic}
+.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-built_in,.hljs-doctag{color:var(--acc2)}
+.hljs-string,.hljs-attr,.hljs-template-variable,.hljs-regexp{color:#10b981}
+.hljs-number,.hljs-symbol,.hljs-bullet,.hljs-meta{color:#f59e0b}
+.hljs-title,.hljs-function,.hljs-section,.hljs-name,.hljs-selector-class,.hljs-selector-id{color:#818cf8}
+.hljs-type,.hljs-variable,.hljs-params,.hljs-property{color:var(--acc)}
+.media{max-width:100%;border-radius:14px;margin-top:8px}
+.note{font-size:.85rem;color:var(--mute)}
+.err{color:#c0392b;font-size:.9rem;min-height:1.2em}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top">Rak<i>.</i>Karya</a>
+  <div class="links"><a href="#karya">Karya</a><a href="#tentang">Tentang</a>
+    <button id="editP" class="chip" hidden>Edit profil</button></div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <span class="deco d1">❝</span><span class="deco d2">&lt;/&gt;</span><span class="deco d3">✦</span><span class="deco d4">✎</span>
+  <div class="wrap">
+    <span class="hello"><b></b> Terbuka untuk dibaca &amp; diunduh</span>
+    <h1>Halo, saya <span id="hName">Nama Kamu</span></h1>
+    <p class="tag-line" id="hTag">Penulis, pembuat proyek, dan pemain kata-kata.</p>
+    <div class="cta">
+      <a class="btn pri" href="#karya">Lihat karya ↓</a>
+      <button id="addBtn" hidden>+ Tambah karya</button>
+    </div>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="marq"><div id="marq"></div></div>
+
+<section id="karya"><div class="wrap">
+  <div class="eyebrow">Koleksi</div><h2>Karya terbaru</h2>
+  <div class="bar"><input id="q" type="search" placeholder="Cari judul atau deskripsi…"><div id="chips" style="display:flex;flex-wrap:wrap;gap:6px"></div></div>
+  <div id="status" class="note"></div>
+  <div id="list" class="grid"></div>
+</div></section>
+
+<section id="tentang"><div class="wrap">
+  <div class="eyebrow">Tentang</div><h2>Di balik karya</h2>
+  <div class="about"><div class="avatar" id="av">N</div>
+    <div><p id="aBio">Ceritakan sedikit tentang dirimu di sini.</p><div id="aLink"></div></div></div>
+</div></section>
+
+<footer><div class="wrap">Dibuat dengan <span class="hearts">♥</span> dan banyak kopi · <span id="yr"></span></div></footer>
+
+<div id="viewM" class="modal"><div class="sheet" id="viewS"></div></div>
+
+<div id="profM" class="modal"><div class="sheet">
+  <h2 style="margin-top:0">Edit profil</h2>
+  <div class="field"><label>Nama</label><input id="pName" maxlength="60"></div>
+  <div class="field"><label>Tagline</label><input id="pTag" maxlength="140"></div>
+  <div class="field"><label>Tentang kamu</label><textarea id="pBio" style="min-height:120px" maxlength="800"></textarea></div>
+  <div class="field"><label>Link GitHub / sosial (opsional)</label><input id="pLink" type="url" placeholder="https://github.com/namakamu"></div>
+  <div class="row"><button id="pSave" class="pri">Simpan</button><button id="pCancel">Batal</button></div>
+</div></div>
+
+<div id="formM" class="modal"><div class="sheet">
+  <h2 style="margin-top:0">Tambah karya</h2>
+  <div class="field"><label>Judul</label><input id="fTitle" maxlength="120"></div>
+  <div class="field"><label>Kategori</label><select id="fCat"></select></div>
+  <div class="field"><label>Deskripsi singkat</label><input id="fDesc" maxlength="300"></div>
+  <div class="field"><label>Cara menambahkan</label>
+    <select id="fMode">
+      <option value="text">Tulis / tempel teks (novel, puisi, kode)</option>
+      <option value="file">Unggah file (PDF, gambar, video, txt, md, csv, json)</option>
+      <option value="github">Repositori GitHub (ada tombol unduh ZIP)</option>
+      <option value="link">Tautan lain (Drive, dll.)</option>
+    </select></div>
+  <div class="field" id="mText"><label>Isi karya</label><textarea id="fBody"></textarea>
+    <div class="row" style="margin:8px 0 0;align-items:center">
+      <select id="fLang" style="width:auto"><option value="none">Bukan kode (teks biasa)</option><option value="auto">Kode — deteksi otomatis</option><option value="javascript">JavaScript</option><option value="typescript">TypeScript</option><option value="python">Python</option><option value="xml">HTML</option><option value="css">CSS</option><option value="java">Java</option><option value="c">C</option><option value="cpp">C++</option><option value="csharp">C#</option><option value="php">PHP</option><option value="sql">SQL</option><option value="bash">Bash</option><option value="json">JSON</option><option value="go">Go</option><option value="rust">Rust</option><option value="kotlin">Kotlin</option><option value="swift">Swift</option></select>
+      <label class="btn" style="margin:0">Muat dari file kode<input id="fCode" type="file" hidden></label>
+    </div></div>
+  <div class="field" id="mFile" hidden><label>File (maks. 20 MB)</label><input id="fFile" type="file" accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.svg,.mp4,.webm,.txt,.md,.csv,.json">
+    <p class="note">Untuk proyek ZIP atau banyak file, pakai mode GitHub.</p></div>
+  <div class="field" id="mLink" hidden><label>URL</label><input id="fLink" type="url" placeholder="https://…"></div>
+  <div class="err" id="fErr"></div>
+  <div class="row"><button id="fSave" class="pri">Simpan</button><button id="fCancel">Batal</button></div>
+</div></div>
+
+<script>
+const CATS=["Novel","Sastra","Proyek","Koding","Lainnya"];
+const CC={Novel:["#c2410c","❝"],Sastra:["#be185d","✎"],Proyek:["#0f766e","◆"],Koding:["#4f46e5","</>"],Lainnya:["#a16207","✦"]};
+const $=s=>document.querySelector(s);
+let db=null,assets=null,downloads=null,isOwner=false,works=[],cat="Semua",profile={};
+
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function fmtDate(ts){try{return new Date(ts).toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"})}catch(e){return""}}
+$("#yr").textContent=new Date().getFullYear();
+
+function renderProfile(){
+  const n=profile.name||"Nama Kamu";
+  $("#hName").textContent=n;
+  $("#hTag").textContent=profile.tagline||"Penulis, pembuat proyek, dan pemain kata-kata.";
+  $("#aBio").textContent=profile.bio||"Ceritakan sedikit tentang dirimu di sini.";
+  $("#av").textContent=(n.trim()[0]||"N").toUpperCase();
+  const l=$("#aLink");l.textContent="";
+  if(/^https?:\/\//i.test(profile.link||"")){const a=el("a","btn","Kunjungi profil ↗");a.href=profile.link;a.target="_blank";a.rel="noopener noreferrer";l.appendChild(a)}
+  document.title=n+" — Portofolio";
+}
+function renderStats(){
+  const s=$("#stats");s.textContent="";
+  const tot=el("div","stat");tot.appendChild(el("b",null,String(works.length)));tot.appendChild(el("small",null,"Total karya"));s.appendChild(tot);
+  CATS.forEach(c=>{const k=works.filter(w=>w.cat===c).length;if(!k)return;
+    const d=el("div","stat");d.style.setProperty("--c",CC[c][0]);d.appendChild(el("b",null,String(k)));d.appendChild(el("small",null,c));s.appendChild(d)});
+  const m=$("#marq");m.textContent="";
+  for(let r=0;r<2;r++)CATS.forEach(c=>{const x=el("span",null,c+" ");x.appendChild(el("em",null,CC[c][1]));m.appendChild(x)});
+  for(let r=0;r<2;r++)CATS.forEach(c=>{const x=el("span",null,c+" ");x.appendChild(el("em",null,CC[c][1]));m.appendChild(x)});
+}
+function renderChips(){
+  const box=$("#chips");box.textContent="";
+  ["Semua",...CATS].forEach(c=>{const b=el("button","chip"+(c===cat?" on":""),c);b.onclick=()=>{cat=c;renderChips();renderList()};box.appendChild(b)});
+}
+function renderList(){
+  const q=$("#q").value.trim().toLowerCase(),box=$("#list");box.textContent="";
+  const items=works.filter(w=>(cat==="Semua"||w.cat===cat)&&(!q||(w.title+" "+(w.desc||"")).toLowerCase().includes(q)));
+  if(!items.length){box.className="";box.appendChild(el("div","empty",works.length?"Tidak ada karya yang cocok.":(isOwner?"Belum ada karya. Klik “Tambah karya” untuk mulai.":"Belum ada karya yang dipublikasikan.")));return}
+  box.className="grid";
+  items.forEach((w,i)=>{
+    const c=el("div","card");const cc=CC[w.cat]||CC.Lainnya;
+    c.style.setProperty("--c",cc[0]);c.dataset.ic=cc[1];c.style.animationDelay=Math.min(i*60,500)+"ms";
+    c.appendChild(el("span","tag",w.cat));
+    c.appendChild(el("h3",null,w.title));
+    c.appendChild(el("p",null,w.desc||(w.mode==="text"?(w.body||"").slice(0,160):"")));
+    c.appendChild(el("div","meta",fmtDate(w.createdAt)+" · "+({text:"Teks",file:"File",link:"Tautan",github:"GitHub"}[w.mode]||"")));
+    c.onclick=()=>openView(w);box.appendChild(c);
+  });
+}
+
+async function saveBlob(name,data,fallbackUrl){
+  try{if(!downloads)throw 0;await downloads.save({filename:name,data})}
+  catch(e){if(e&&e.code==="declined")return;if(fallbackUrl)window.open(fallbackUrl,"_blank","noopener")}
+}
+function safeName(t,ext){return(t||"karya").replace(/[^\w\- ]+/g,"").trim().replace(/\s+/g,"-").slice(0,60)+ext}
+
+function codeBox(w){
+  const box=el("div","codebox"),bar=el("div","codebar"),lang=(w.lang&&w.lang!=="none"&&w.lang!=="auto")?w.lang:"";
+  const n=w.body.split("\n").length;
+  const lbl=el("span",null,(lang==="xml"?"html":lang||"kode")+" · "+n+" baris");bar.appendChild(lbl);
+  const cp=el("button",null,"Salin");
+  cp.onclick=async()=>{try{await navigator.clipboard.writeText(w.body);cp.textContent="Tersalin ✓"}catch(e){cp.textContent="Gagal menyalin"}setTimeout(()=>cp.textContent="Salin",1500)};
+  bar.appendChild(cp);box.appendChild(bar);
+  const wrap=el("div","codewrap"),g=el("pre","gut",Array.from({length:n},(_,i)=>i+1).join("\n")),pre=el("pre","src"),code=document.createElement("code");
+  try{
+    if(window.hljs){const r=lang&&hljs.getLanguage(lang)?hljs.highlight(w.body,{language:lang}):hljs.highlightAuto(w.body);code.innerHTML=r.value;
+      if(!lang&&r.language)lbl.textContent=(r.language==="xml"?"html":r.language)+" · "+n+" baris"}
+    else code.textContent=w.body;
+  }catch(e){code.textContent=w.body}
+  pre.appendChild(code);wrap.appendChild(g);wrap.appendChild(pre);box.appendChild(wrap);return box;
+}
+function openView(w){
+  const s=$("#viewS");s.textContent="";
+  const t=el("span","tag",w.cat);t.style.setProperty("--c",(CC[w.cat]||CC.Lainnya)[0]);s.appendChild(t);
+  const h=el("h2",null,w.title);h.style.margin="10px 0 4px";s.appendChild(h);
+  if(w.desc)s.appendChild(el("p","note",w.desc));
+  const row=el("div","row");
+  if(w.mode==="text"){
+    const isCode=(w.lang&&w.lang!=="none")||(!w.lang&&w.cat==="Koding");
+    s.appendChild(isCode?codeBox(w):el("div","read",w.body));
+    const b=el("button","pri","Unduh");b.onclick=()=>saveBlob(safeName(w.title,isCode?(w.lang==="json"?".json":w.lang==="xml"?".html":".txt"):".md"),w.body);row.appendChild(b);
+  }else if(w.mode==="file"){
+    const u=w.url,ext=(w.fileName||"").split(".").pop().toLowerCase();
+    if(["png","jpg","jpeg","gif","webp","svg"].includes(ext)){const i=el("img","media");i.src=u;i.alt=w.title;s.appendChild(i)}
+    if(["mp4","webm"].includes(ext)){const v=el("video","media");v.src=u;v.controls=true;s.appendChild(v)}
+    const b=el("button","pri","Unduh "+(w.fileName||"file"));
+    b.onclick=async()=>{try{const r=await fetch(u);await saveBlob(w.fileName||"karya."+ext,await r.blob(),u)}catch(e){window.open(u,"_blank","noopener")}};
+    row.appendChild(b);
+    const o=el("a","btn","Buka di tab baru");o.href=u;o.target="_blank";o.rel="noopener";row.appendChild(o);
+  }else if(w.mode==="github"){
+    const g=el("a","btn pri","Lihat di GitHub");g.href=w.link;g.target="_blank";g.rel="noopener noreferrer";row.appendChild(g);
+    const z=el("a","btn","Unduh ZIP");z.href=w.link+"/archive/HEAD.zip";z.target="_blank";z.rel="noopener noreferrer";row.appendChild(z);
+    s.appendChild(el("p","note",w.link.replace("https://","")));
+  }else{
+    const o=el("a","btn pri","Buka tautan");o.href=w.link;o.target="_blank";o.rel="noopener noreferrer";row.appendChild(o);
+    s.appendChild(el("p","note",w.link));
+  }
+  const cl=el("button",null,"Tutup");cl.onclick=()=>$("#viewM").classList.remove("open");row.appendChild(cl);
+  if(isOwner){
+    const d=el("button","danger","Hapus");
+    d.onclick=async()=>{
+      if(!confirm("Hapus karya ini secara permanen?"))return;
+      try{await db.collection("works").doc(w.id).delete();if(w.assetId&&assets)await assets.delete(w.assetId).catch(()=>{});$("#viewM").classList.remove("open")}catch(e){alert("Gagal menghapus.")}
+    };row.appendChild(d);
+  }
+  s.appendChild(row);$("#viewM").classList.add("open");
+}
+document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m&&m.id!=="formM")m.classList.remove("open")});
+
+// Profil (owner)
+$("#editP").onclick=()=>{$("#pName").value=profile.name||"";$("#pTag").value=profile.tagline||"";$("#pBio").value=profile.bio||"";$("#pLink").value=profile.link||"";$("#profM").classList.add("open")};
+$("#pCancel").onclick=()=>$("#profM").classList.remove("open");
+$("#pSave").onclick=async()=>{
+  try{await db.doc("profile/main").set({name:$("#pName").value.trim(),tagline:$("#pTag").value.trim(),bio:$("#pBio").value.trim(),link:$("#pLink").value.trim()});$("#profM").classList.remove("open")}
+  catch(e){alert("Gagal menyimpan profil.")}
+};
+
+// Form karya (owner)
+CATS.forEach(c=>{const o=document.createElement("option");o.value=o.textContent=c;$("#fCat").appendChild(o)});
+function syncMode(){const m=$("#fMode").value;$("#mText").hidden=m!=="text";$("#mFile").hidden=m!=="file";$("#mLink").hidden=m!=="link"&&m!=="github"}
+$("#fMode").onchange=syncMode;
+$("#fCat").onchange=()=>{if($("#fCat").value==="Koding"&&$("#fLang").value==="none")$("#fLang").value="auto"};
+const EXT={js:"javascript",mjs:"javascript",ts:"typescript",py:"python",html:"xml",htm:"xml",css:"css",java:"java",c:"c",cpp:"cpp",cs:"csharp",php:"php",sql:"sql",sh:"bash",json:"json",go:"go",rs:"rust",kt:"kotlin",swift:"swift"};
+$("#fCode").onchange=async e=>{const f=e.target.files[0];if(!f)return;
+  if(f.size>200000){$("#fErr").textContent="File kode terlalu besar (maks ±200 KB).";return}
+  $("#fBody").value=await f.text();
+  $("#fLang").value=EXT[f.name.split(".").pop().toLowerCase()]||"auto";
+  if(!$("#fTitle").value)$("#fTitle").value=f.name;
+  if($("#fCat").value!=="Koding"&&$("#fCat").value!=="Proyek")$("#fCat").value="Koding";
+  e.target.value="";$("#fErr").textContent=""};
+$("#addBtn").onclick=()=>{["fTitle","fDesc","fBody","fLink"].forEach(i=>$("#"+i).value="");$("#fLang").value="none";$("#fFile").value="";$("#fErr").textContent="";$("#formM").classList.add("open")};
+$("#fCancel").onclick=()=>$("#formM").classList.remove("open");
+$("#fSave").onclick=async()=>{
+  const err=$("#fErr");err.textContent="";
+  const title=$("#fTitle").value.trim(),mode=$("#fMode").value;
+  if(!title){err.textContent="Judul wajib diisi.";return}
+  const w={title,cat:$("#fCat").value,desc:$("#fDesc").value.trim(),mode,lang:mode==="text"?$("#fLang").value:"none",createdAt:Date.now()};
+  const btn=$("#fSave");btn.disabled=true;
+  try{
+    if(mode==="text"){
+      w.body=$("#fBody").value;
+      if(!w.body.trim())throw new Error("Isi karya masih kosong.");
+      if(new Blob([w.body]).size>200000)throw new Error("Teks terlalu panjang (maks ±200 KB). Pecah per bab atau unggah sebagai file.");
+    }else if(mode==="github"){
+      const m=$("#fLink").value.trim().match(/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?(?:[\/?#].*)?$/i);
+      if(!m)throw new Error("Masukkan URL repo, contoh: https://github.com/nama/repo");
+      w.link="https://github.com/"+m[1]+"/"+m[2];
+    }else if(mode==="link"){
+      const u=$("#fLink").value.trim();
+      if(!/^https?:\/\//i.test(u))throw new Error("URL harus diawali http:// atau https://");
+      w.link=u;
+    }else{
+      const f=$("#fFile").files[0];
+      if(!f)throw new Error("Pilih file dulu.");
+      if(!assets)throw new Error("Fitur unggah file tidak tersedia untuk akun ini.");
+      const r=await assets.upload(f);w.assetId=r.id;w.url=r.url;w.fileName=f.name;
+    }
+    await db.collection("works").doc("w"+Date.now().toString(36)+Math.random().toString(36).slice(2,6)).set(w);
+    $("#formM").classList.remove("open");
+  }catch(e){err.textContent=(e&&e.message)||"Gagal menyimpan. Coba lagi."}
+  btn.disabled=false;
+};
+
+async function init(){
+  renderChips();renderList();renderStats();renderProfile();$("#q").oninput=renderList;
+  $("#status").textContent="Memuat karya…";
+  const t=setTimeout(()=>{$("#status").textContent="Data belum bisa dijangkau. Pastikan Anda sudah masuk ke claude.ai."},10000);
+  try{
+    const user=await claude.use("user");
+    isOwner=!!(user&&user.isOwner());
+    db=await claude.use("db");
+    if(isOwner){assets=await claude.use("assets");$("#addBtn").hidden=false;$("#editP").hidden=false}
+    downloads=await claude.use("downloads");
+    if(!db){clearTimeout(t);$("#status").textContent="Silakan masuk ke claude.ai untuk melihat karya.";return}
+    db.doc("profile/main").onSnapshot(s=>{profile=(s&&s.exists!==false&&s.data&&s.data())||{};renderProfile()},()=>{});
+    db.collection("works").orderBy("createdAt","desc").onSnapshot(snap=>{
+      clearTimeout(t);$("#status").textContent="";
+      works=snap.docs.map(d=>({id:d.id,...d.data()}));renderStats();renderList();
+    },e=>{clearTimeout(t);$("#status").textContent="Gagal memuat data."});
+  }catch(e){clearTimeout(t);$("#status").textContent="Gagal memuat data."}
+}
+init();
+</script>
+</body>
+</html>
